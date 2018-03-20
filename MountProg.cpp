@@ -109,7 +109,7 @@ void CMountProg::ProcedureMNT(void)
 	if (m_nMountNum < MOUNT_NUM_MAX && stricmp(path, m_pExportPath) == 0)  //path match
 	{
 		m_pOutStream->Write(MNT_OK);  //OK
-		if (m_pParam->nVersion == 1)
+		if (m_pParam->nVersion == 1 || m_pParam->nVersion == 2)
 			m_pOutStream->Write(GetFileHandle(path), FHSIZE);  //fhandle
 		else
 		{
